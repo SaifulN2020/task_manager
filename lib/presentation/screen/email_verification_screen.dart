@@ -34,7 +34,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               height: 10,
             ),
             TextFormField(
-                decoration: InputDecoration(hintText: "Email Address")),
+                decoration: const InputDecoration(hintText: "Email Address")),
             const SizedBox(
               height: 35,
             ),
