@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:task_manager/presentation/widget/background_setup.dart';
 
@@ -17,32 +16,37 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
       body: BackgroundSetup(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 120,
             ),
             Text(
               "Your Email Address",
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            SizedBox(
+            const SizedBox(
               height: 14,
             ),
-            Text(
+            const Text(
               "A 6 digit verification code will sent to your email address",
-              style: TextStyle(fontSize: 15, color: Colors.grey),
+              style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(
+              height: 10,
+            ),
             TextFormField(
                 decoration: InputDecoration(hintText: "Email Address")),
-            SizedBox(height: 35,),
+            const SizedBox(
+              height: 35,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Have Account?"),
-                ElevatedButton(onPressed: (){
-                  Navigator.pop(context);
-                }, child: Text("Sign In"))
-
+                const Text("Have Account?"),
+                ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text("Sign In"))
               ],
             )
           ],
