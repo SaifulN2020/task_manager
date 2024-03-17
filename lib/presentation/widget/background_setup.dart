@@ -16,7 +16,7 @@ class BackgroundSetup extends StatelessWidget {
           width: double.infinity,
           height: double.infinity,
         ),
-        child
+        SafeArea(child: child)
       ],
     );
   }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task_manager/presentation/utils/assets_path.dart';
+import 'package:task_manager/presentation/screen/sign_up_screen.dart';
 import 'package:task_manager/presentation/widget/background_setup.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -11,18 +10,95 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  final TextEditingController _emaiController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  GlobalKey<FormState> _globalKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: BackgroundSetup(
-        child:  Center(
-          child: SvgPicture.asset(
-            "assets/images/logo.svg",
-            width: 120,
-            fit: BoxFit.scaleDown,
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: SingleChildScrollView(
+            child: Form(
+              key: _globalKey,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 130,
+                  ),
+                  const Text(
+                    "Get Start With",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  TextFormField(
+                    controller: _emaiController,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
+                      hintText: "Email",
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextFormField(
+                    controller: _passwordController,
+                    obscureText: true,
+                    decoration: const InputDecoration(hintText: "Password"),
+                  ),
+                  SizedBox(
+                    height: 35,
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Icon(Icons.arrow_circle_right_outlined),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  SizedBox(
+                    height: 54,
+                  ),
+                  Center(
+                      child: TextButton(
+                          onPressed: () {},
+                          child: const Text("Forgot password ?"))),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Dont have an acoount?"),
+                      TextButton(
+                          onPressed: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) {
+                              return const SignUpScreen();
+                            }));
+                          },
+                          child: Text(
+                            "Sign Up?",
+                            style: TextStyle(color: Colors.green),
+                          ))
+                    ],
+                  )
+                ],
+              ),
+            ),
           ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _emaiController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 }
