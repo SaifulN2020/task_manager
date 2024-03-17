@@ -21,7 +21,7 @@ class SignUpScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
                 SizedBox(
-                  height: 12,
+                  height: 10,
                 ),
                 TextFormField(
                   decoration: InputDecoration(hintText: "Name"),
