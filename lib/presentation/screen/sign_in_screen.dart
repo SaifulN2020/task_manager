@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/presentation/screen/email_verification_screen.dart';
 import 'package:task_manager/presentation/screen/sign_up_screen.dart';
 import 'package:task_manager/presentation/widget/background_setup.dart';
 
@@ -64,7 +65,16 @@ class _SignInScreenState extends State<SignInScreen> {
                   ),
                   Center(
                       child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return EmailVerificationScreen();
+                                },
+                              ),
+                            );
+                          },
                           child: const Text("Forgot password ?"))),
                   SizedBox(
                     height: 8,
