@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/presentation/screen/pin_verification_screen.dart';
+import 'package:task_manager/presentation/screen/sign_in_screen.dart';
 import 'package:task_manager/presentation/widget/background_setup.dart';
 
-class EmailVerificationScreen extends StatefulWidget {
-  const EmailVerificationScreen({Key? key}) : super(key: key);
+class PinVerificationScreen extends StatefulWidget {
+  const PinVerificationScreen({Key? key}) : super(key: key);
 
   @override
-  State<EmailVerificationScreen> createState() =>
-      _EmailVerificationScreenState();
+  State<PinVerificationScreen> createState() =>
+      _PinVerificationScreenState();
 }
 
-class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
+class _PinVerificationScreenState extends State<PinVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +21,7 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               height: 120,
             ),
             Text(
-              "Your Email Address",
+              "Pin Verification",
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const SizedBox(
@@ -35,19 +35,13 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
               height: 10,
             ),
             TextFormField(
-                decoration: const InputDecoration(hintText: "Email Address")),
+                decoration: const InputDecoration(hintText: "OTP")),
             const SizedBox(
               height: 35,
             ),
             SizedBox(
-
               width: double.infinity,
-              child: ElevatedButton(onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context){
-                  return PinVerificationScreen();
-                },),);
-              },
-                  child: Icon(Icons.arrow_circle_right_outlined))
+              child: ElevatedButton(onPressed: (){}, child: Text("Verify")),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -55,7 +49,10 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 const Text("Have Account?"),
                 ElevatedButton(
                     onPressed: () {
-                      Navigator.pop(context);
+                      Navigator.pushAndRemoveUntil(context,
+                          MaterialPageRoute(builder: (context){
+                            return SignInScreen();
+                          }), (route) => false);
                     },
                     child: const Text("Sign In"))
               ],
