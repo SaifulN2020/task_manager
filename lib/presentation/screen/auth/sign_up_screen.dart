@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widget/background_setup.dart';
+import '../../widget/background_setup.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _lastNameController=TextEditingController();
   final TextEditingController _mobileController=TextEditingController();
   final TextEditingController _passwordController=TextEditingController();
-  GlobalKey<FormState> _formKey=GlobalKey<FormState>();
+  final GlobalKey<FormState> _formKey=GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,24 +43,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     controller: _lastNameController,
                     decoration: const InputDecoration(hintText: "Last Name"),
                   ),
-                  SizedBox(height: 8,),
+                  const SizedBox(height: 8,),
                   TextFormField(
                     controller: _mobileController,
                     decoration: const InputDecoration(hintText: "Mobile"),
                   ),
-                  SizedBox(height: 8,),
+                  const SizedBox(height: 8,),
                   TextFormField(
                     controller: _passwordController,
                     decoration: const InputDecoration(hintText: "Password"),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 18,
                   ),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(onPressed: (){}, child: Icon(Icons.arrow_circle_right_outlined)),
                   ),
-                  SizedBox(height: 25
+                  const SizedBox(height: 25
                     ,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

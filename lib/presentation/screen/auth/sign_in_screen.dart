@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:task_manager/presentation/screen/email_verification_screen.dart';
-import 'package:task_manager/presentation/screen/sign_up_screen.dart';
+import 'package:task_manager/presentation/screen/auth/email_verification_screen.dart';
+import 'package:task_manager/presentation/screen/main_bottom_nav_screen.dart';
+import 'package:task_manager/presentation/screen/auth/sign_up_screen.dart';
 import 'package:task_manager/presentation/widget/background_setup.dart';
 
 class SignInScreen extends StatefulWidget {
@@ -26,7 +27,7 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 130,
                   ),
                   const Text(
@@ -49,18 +50,25 @@ class _SignInScreenState extends State<SignInScreen> {
                     obscureText: true,
                     decoration: const InputDecoration(hintText: "Password"),
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(
+                    height: 10,
+                  ),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(context,
+                            MaterialPageRoute(builder: (context){
+                              return MainBottomNavScreen();
+                            }), (route) => false);
+                      },
                       child: Icon(Icons.arrow_circle_right_outlined),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 54,
                   ),
                   Center(
@@ -76,7 +84,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             );
                           },
                           child: const Text("Forgot password ?"))),
-                  SizedBox(
+                  const SizedBox(
                     height: 8,
                   ),
                   Row(
@@ -90,7 +98,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               return const SignUpScreen();
                             }));
                           },
-                          child: Text(
+                          child: const Text(
                             "Sign Up?",
                             style: TextStyle(color: Colors.green),
                           ))

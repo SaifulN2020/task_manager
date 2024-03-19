@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
-import 'package:task_manager/presentation/screen/set_password_screen.dart';
-import 'package:task_manager/presentation/screen/sign_in_screen.dart';
+import 'package:task_manager/presentation/screen/auth/set_password_screen.dart';
+import 'package:task_manager/presentation/screen/auth/sign_in_screen.dart';
 import 'package:task_manager/presentation/widget/background_setup.dart';
 
 class PinVerificationScreen extends StatefulWidget {
   const PinVerificationScreen({Key? key}) : super(key: key);
 
   @override
-  State<PinVerificationScreen> createState() =>
-      _PinVerificationScreenState();
+  State<PinVerificationScreen> createState() => _PinVerificationScreenState();
 }
 
 class _PinVerificationScreenState extends State<PinVerificationScreen> {
@@ -52,33 +51,35 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                 animationDuration: Duration(milliseconds: 300),
                 backgroundColor: Colors.blue.shade50,
                 enableActiveFill: true,
-
-                onCompleted: (v) {
-                },
+                onCompleted: (v) {},
                 onChanged: (value) {
-                  setState(() {
-                  });
+                  setState(() {});
                 },
                 beforeTextPaste: (text) {
                   print("Allowing to paste $text");
                   //if you return true then it will show the paste confirmation dialog. Otherwise if false, then nothing will happen.
                   //but you can show anything you want here, like your pop up saying wrong paste format or etc
                   return true;
-                }, appContext: context,
+                },
+                appContext: context,
               ),
               const SizedBox(
                 height: 35,
               ),
               SizedBox(
                 width: double.infinity,
-                child: ElevatedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(
-                      builder: (context){
+                child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
                         return SetPasswordScreen();
                       }));
-                }, child: Text("Verify")),
+                    },
+                    child: Text("Verify")),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -86,9 +87,9 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                   ElevatedButton(
                       onPressed: () {
                         Navigator.pushAndRemoveUntil(context,
-                            MaterialPageRoute(builder: (context){
-                              return SignInScreen();
-                            }), (route) => false);
+                            MaterialPageRoute(builder: (context) {
+                          return SignInScreen();
+                        }), (route) => false);
                       },
                       child: const Text("Sign In"))
                 ],
