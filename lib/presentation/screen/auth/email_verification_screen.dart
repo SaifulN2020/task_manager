@@ -37,21 +37,28 @@ class _EmailVerificationScreenState extends State<EmailVerificationScreen> {
                 height: 10,
               ),
               TextFormField(
-                  decoration: const InputDecoration(hintText: "Email Address")),
+                decoration: const InputDecoration(hintText: "Email Address"),
+              ),
               const SizedBox(
                 height: 35,
               ),
               SizedBox(
-
-                width: double.infinity,
-                child: ElevatedButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context){
-                    return PinVerificationScreen();
-                  },),);
-                },
-                    child: Icon(Icons.arrow_circle_right_outlined))
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const PinVerificationScreen();
+                            },
+                          ),
+                        );
+                      },
+                      child: const Icon(Icons.arrow_circle_right_outlined))),
+              const SizedBox(
+                height: 25,
               ),
-              SizedBox(height: 25,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
