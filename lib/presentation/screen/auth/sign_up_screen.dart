@@ -10,12 +10,12 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final TextEditingController _emailController=TextEditingController();
-  final TextEditingController _firstNameController=TextEditingController();
-  final TextEditingController _lastNameController=TextEditingController();
-  final TextEditingController _mobileController=TextEditingController();
-  final TextEditingController _passwordController=TextEditingController();
-  final GlobalKey<FormState> _formKey=GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _firstNameController = TextEditingController();
+  final TextEditingController _lastNameController = TextEditingController();
+  final TextEditingController _mobileController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,29 +26,37 @@ class _SignUpScreenState extends State<SignUpScreen> {
             child: Form(
               key: _formKey,
               child: Column(
-                children: [SizedBox(height: 80),
+                children: [
+                  const SizedBox(height: 80),
                   Text("Join With Us",
                       style: Theme.of(context).textTheme.titleLarge),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   TextFormField(
                     controller: _emailController,
-
-                    decoration: const InputDecoration(hintText: "Email"),),
+                    decoration: const InputDecoration(hintText: "Email"),
+                  ),
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: _firstNameController,
-                    decoration: const InputDecoration(hintText: "First Name"),),
-                  const SizedBox(height: 8,),
+                    decoration: const InputDecoration(hintText: "First Name"),
+                  ),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   TextFormField(
                     controller: _lastNameController,
                     decoration: const InputDecoration(hintText: "Last Name"),
                   ),
-                  const SizedBox(height: 8,),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   TextFormField(
                     controller: _mobileController,
                     decoration: const InputDecoration(hintText: "Mobile"),
                   ),
-                  const SizedBox(height: 8,),
+                  const SizedBox(
+                    height: 8,
+                  ),
                   TextFormField(
                     controller: _passwordController,
                     decoration: const InputDecoration(hintText: "Password"),
@@ -58,18 +66,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   SizedBox(
                     width: double.infinity,
-                    child: ElevatedButton(onPressed: (){}, child: Icon(Icons.arrow_circle_right_outlined)),
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        child: Icon(Icons.arrow_circle_right_outlined)),
                   ),
-                  const SizedBox(height: 25
-                    ,),
+                  const SizedBox(
+                    height: 25,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text("Have Account"),
-                      TextButton(onPressed: (){
-                        Navigator.pop(context);
-                      }, child: const Text("Sign In"))
-
+                      TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: const Text("Sign In"))
                     ],
                   )
                 ],
@@ -80,8 +92,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
       ),
     );
   }
+
   @override
-  void dispose(){
+  void dispose() {
     _emailController.dispose();
     _firstNameController.dispose();
     _lastNameController.dispose();

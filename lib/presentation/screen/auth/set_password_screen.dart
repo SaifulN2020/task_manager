@@ -10,8 +10,9 @@ class SetPasswordScreen extends StatefulWidget {
 }
 
 class _SetPasswordScreenState extends State<SetPasswordScreen> {
-  final TextEditingController _passwordController=TextEditingController();
-  final TextEditingController _confirmPasswordController=TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmPasswordController =
+      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -75,11 +76,11 @@ class _SetPasswordScreenState extends State<SetPasswordScreen> {
       )),
     );
   }
+
   @override
-  void dispose(){
+  void dispose() {
     _passwordController.dispose();
     _confirmPasswordController.dispose();
     super.dispose();
-
   }
 }

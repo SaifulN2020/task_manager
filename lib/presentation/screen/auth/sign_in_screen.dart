@@ -58,9 +58,9 @@ class _SignInScreenState extends State<SignInScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         Navigator.pushAndRemoveUntil(context,
-                            MaterialPageRoute(builder: (context){
-                              return MainBottomNavScreen();
-                            }), (route) => false);
+                            MaterialPageRoute(builder: (context) {
+                          return MainBottomNavScreen();
+                        }), (route) => false);
                       },
                       child: Icon(Icons.arrow_circle_right_outlined),
                     ),
