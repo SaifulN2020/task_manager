@@ -49,6 +49,7 @@ class _SignInScreenState extends State<SignInScreen> {
                     obscureText: true,
                     decoration: const InputDecoration(hintText: "Password"),
                   ),
+                  SizedBox(height: 10,),
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
