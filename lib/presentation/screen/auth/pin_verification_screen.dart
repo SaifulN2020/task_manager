@@ -72,12 +72,12 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                     onPressed: () {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) {
-                        return SetPasswordScreen();
+                        return const SetPasswordScreen();
                       }));
                     },
-                    child: Text("Verify")),
+                    child: const Text("Verify")),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(

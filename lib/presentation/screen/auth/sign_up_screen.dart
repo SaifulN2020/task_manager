@@ -68,7 +68,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     width: double.infinity,
                     child: ElevatedButton(
                         onPressed: () {},
-                        child: Icon(Icons.arrow_circle_right_outlined)),
+                        child: const Icon(Icons.arrow_circle_right_outlined)),
                   ),
                   const SizedBox(
                     height: 25,
