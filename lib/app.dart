@@ -37,7 +37,8 @@ class _TaskManagerState extends State<TaskManager> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 12))),
         textTheme: const TextTheme(
-            titleLarge: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
+            titleLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            titleMedium: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
         chipTheme: ChipThemeData(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50))),
