@@ -48,7 +48,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                   fieldWidth: 40,
                   activeFillColor: Colors.white,
                 ),
-                animationDuration: Duration(milliseconds: 300),
+                animationDuration: const Duration(milliseconds: 300),
                 backgroundColor: Colors.blue.shade50,
                 enableActiveFill: true,
                 onCompleted: (v) {},
@@ -88,7 +88,7 @@ class _PinVerificationScreenState extends State<PinVerificationScreen> {
                       onPressed: () {
                         Navigator.pushAndRemoveUntil(context,
                             MaterialPageRoute(builder: (context) {
-                          return SignInScreen();
+                          return const SignInScreen();
                         }), (route) => false);
                       },
                       child: const Text("Sign In"))
