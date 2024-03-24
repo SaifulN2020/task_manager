@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:task_manager/presentation/screen/cancelled_task_screen.dart';
+import 'package:task_manager/presentation/screen/complete_task_screen.dart';
 import 'package:task_manager/presentation/screen/new_task_screen.dart';
+import 'package:task_manager/presentation/screen/progress_task_screen.dart';
 import 'package:task_manager/presentation/utils/app_colors.dart';
 
 class MainBottomNavScreen extends StatefulWidget {
@@ -13,9 +16,9 @@ class _MainBottomNavScreenState extends State<MainBottomNavScreen> {
   int _currentSelectedIndex = 0;
   final List<Widget> _screen = [
     const NewTaskScreen(),
-    const NewTaskScreen(),
-    const NewTaskScreen(),
-    const NewTaskScreen(),
+    const CompleteTaskScreen(),
+    const ProgressTaskScreen(),
+    const CancelledTaskScreen(),
   ];
   @override
   Widget build(BuildContext context) {
