@@ -32,13 +32,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       style: Theme.of(context).textTheme.titleLarge),
                   const SizedBox(height: 10),
                   TextFormField(
+                    validator: (String? value){
+                      if(value?.trim().isEmpty ?? true){
+                        return "Enter your email";
+                      }return null;
+                      } ,
                     controller: _emailController,
-                    decoration: const InputDecoration(hintText: "Email"),
+                    decoration: const
+                    InputDecoration(hintText: "Email"),
+
                   ),
                   const SizedBox(height: 8),
                   TextFormField(
+
                     controller: _firstNameController,
-                    decoration: const InputDecoration(hintText: "First Name"),
+                    decoration: const InputDecoration(
+                        hintText: "First Name"),
+                    validator: (String? value){
+                      if(value?.trim().isEmpty ?? true){
+                        return "Enter your First Name";
+                      }return null;
+
+                    } ,
                   ),
                   const SizedBox(
                     height: 8,
@@ -67,7 +82,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
                         child: const Icon(Icons.arrow_circle_right_outlined)),
                   ),
                   const SizedBox(
@@ -79,7 +96,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       const Text("Have Account"),
                       TextButton(
                           onPressed: () {
-                            Navigator.pop(context);
+
                           },
                           child: const Text("Sign In"))
                     ],

@@ -4,7 +4,7 @@ import 'package:task_manager/presentation/utils/app_colors.dart';
 
 class TaskManager extends StatefulWidget {
   const TaskManager({Key? key}) : super(key: key);
-  static GlobalKey<NavigatorState> navigatorKey=GlobalKey<NavigatorState>();
+  static GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   State<TaskManager> createState() => _TaskManagerState();

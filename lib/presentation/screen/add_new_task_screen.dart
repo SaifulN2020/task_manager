@@ -56,7 +56,7 @@ class _AddNewTaskScreenState extends State<AddNewTaskScreen> {
                         Navigator.pop(context);
                       },
                       child: const Icon(Icons.arrow_circle_right_outlined),
-                    ))
+                    ),),
               ],
             ),
           ),
